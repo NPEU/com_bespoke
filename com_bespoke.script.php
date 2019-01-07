@@ -1,5 +1,12 @@
 <?php
-#file_put_contents(dirname($_SERVER['DOCUMENT_ROOT']) . '/extensions/plgProjectsInstallerScript--loaded-file.txt', date('c'));
+/**
+ * @package     Joomla.Site
+ * @subpackage  com_bespoke
+ *
+ * @copyright   Copyright (C) NPEU 2018.
+ * @license     MIT License; see LICENSE.md
+ */
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
