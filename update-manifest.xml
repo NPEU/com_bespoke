@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <updates>
     <update>
-        <name>com_bespoke component</name>
+        <name>NPEU: com_bespoke</name>
         <description>Joomla! com_bespoke component</description>
         <element>com_bespoke</element>
         <type>component</type>
@@ -17,7 +17,7 @@
         </tags>
     </update>
     <update>
-        <name>com_bespoke component</name>
+        <name>NPEU: com_bespoke</name>
         <description>Joomla! com_bespoke component</description>
         <element>com_bespoke</element>
         <type>component</type>
