@@ -6,12 +6,12 @@
         <element>com_bespoke</element>
         <type>component</type>
         <version>1.0.0</version>
-        <client>administrator</client>
+        <client>site</client>
         <infourl title="com_bespoke component">https://github.com/NPEU/com_bespoke/releases/tag/1.0.0</infourl>
         <downloads>
             <downloadurl type="full" format="zip">https://github.com/NPEU/com_bespoke/archive/v1.0.0.zip</downloadurl>
         </downloads>
-        <targetplatform name="joomla" version="3.([6789]|10)" />
+        <targetplatform name="joomla" />
         <tags>
             <tag>stable</tag>
         </tags>
@@ -22,12 +22,12 @@
         <element>com_bespoke</element>
         <type>component</type>
         <version>1.1.0</version>
-        <client>administrator</client>
+        <client>site</client>
         <infourl title="com_bespoke component">https://github.com/NPEU/com_bespoke/releases/tag/1.1.0</infourl>
         <downloads>
             <downloadurl type="full" format="zip">https://github.com/NPEU/com_bespoke/archive/v1.1.0.zip</downloadurl>
         </downloads>
-        <targetplatform name="joomla" version="3.([6789]|10)" />
+        <targetplatform name="joomla" />
         <tags>
             <tag>stable</tag>
         </tags>
