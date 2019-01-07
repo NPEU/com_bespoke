@@ -1,10 +1,10 @@
 <?php
 /**
  * @package     Joomla.Site
- * @subpackage  com_bes[oke]
+ * @subpackage  com_bespoke
  *
- * @copyright   Copyright (C) 2018 - Andy Kirk.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @copyright   Copyright (C) NPEU 2018.
+ * @license     MIT License; see LICENSE.md
  */
 
 defined('_JEXEC') or die;
