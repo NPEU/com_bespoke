@@ -12,12 +12,6 @@ defined('_JEXEC') or die('Restricted access');
 
 /**
  * Checks for the existence of Custom Fields and creates them if not present.
- *
- * @package     Joomla.Plugins
- * @subpackage  plg_projects
- *
- * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 class com_BespokeInstallerScript
 {
@@ -28,10 +22,8 @@ class com_BespokeInstallerScript
      *
      * @return void
      */
-    public function install($parent) 
+    public function install($parent)
     {
-        #$parent->getParent()->setRedirectURL('index.php?option=com_helloworld');
-        #file_put_contents(dirname($_SERVER['DOCUMENT_ROOT']) . '/extensions/plgProjectsInstallerScript--install.txt', date('c'));
     }
 
     /**
@@ -41,9 +33,8 @@ class com_BespokeInstallerScript
      *
      * @return void
      */
-    public function uninstall($parent) 
+    public function uninstall($parent)
     {
-        #echo '<p>' . JText::_('COM_HELLOWORLD_UNINSTALL_TEXT') . '</p>';
     }
 
     /**
@@ -53,9 +44,8 @@ class com_BespokeInstallerScript
      *
      * @return void
      */
-    public function update($parent) 
+    public function update($parent)
     {
-        #echo '<p>' . JText::sprintf('COM_HELLOWORLD_UPDATE_TEXT', $parent->get('manifest')->version) . '</p>';
     }
 
     /**
@@ -70,9 +60,8 @@ class com_BespokeInstallerScript
      *
      * @return void
      */
-    public function preflight($type, $parent) 
+    public function preflight($type, $parent)
     {
-        #file_put_contents(dirname($_SERVER['DOCUMENT_ROOT']) . '/extensions/plgProjectsInstallerScript--preflight.txt', date('c'));
     }
 
     /**
@@ -86,22 +75,16 @@ class com_BespokeInstallerScript
      *
      * @return void
      */
-    public function postflight($type, $parent) 
+    public function postflight($type, $parent)
     {
-        #echo '<p>' . JText::_('COM_HELLOWORLD_POSTFLIGHT_' . $type . '_TEXT') . '</p>';
-        #file_put_contents(dirname($_SERVER['DOCUMENT_ROOT']) . '/extensions/plgProjectsInstallerScript--postflight.txt', date('c'));
         if ($type != 'install') {
             return;
         }
-        
-        #file_put_contents('/_sub/j3/extensions/t.txt', 'test');
 
-        #echo "<pre>\n"; var_dump('install'); echo "</pre>\n"; exit;
-        
-        
+
         $manifest = $parent->getParent()->getManifest();
         $name = (string) $manifest->name;
-        
+
         $db = JFactory::getDbo();
         $query = $db->getQuery(true);
         $query->select('id');
@@ -111,8 +94,8 @@ class com_BespokeInstallerScript
         $ids = $db->loadColumn();
 
         $db = JFactory::getDbo();
-        $table = JTable::getInstance('menu');       
-        
+        $table = JTable::getInstance('menu');
+
         if ($error = $db->getErrorMsg())
         {
             return false;
