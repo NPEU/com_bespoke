@@ -13,9 +13,7 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.view');
 
 /**
- * HTML View class for the search component
- *
- * @since  1.0
+ * HTML View class for the Bespoke Component
  */
 class BespokeViewBespoke extends JViewLegacy
 {
@@ -25,8 +23,6 @@ class BespokeViewBespoke extends JViewLegacy
      * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
      *
      * @return  mixed  A string if successful, otherwise an Error object.
-     *
-     * @since 1.0
      */
     public function display($tpl = null)
     {

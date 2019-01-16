@@ -7,13 +7,12 @@
  * @license     MIT License; see LICENSE.md
  */
 
-// No direct access to this file
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die;
 
 /**
- * Checks for the existence of Custom Fields and creates them if not present.
+ * Removes component entry in the admin menu, as it's front-end only.
  */
-class com_BespokeInstallerScript
+class com_bespokeInstallerScript
 {
     /**
      * This method is called after a component is installed.
