@@ -45,37 +45,30 @@ class BespokeViewBespoke extends JViewLegacy
 
         $title = $params->get('page_title');
 
-        if ($app->get('sitename_pagetitles', 0) == 1)
-        {
+        if ($app->get('sitename_pagetitles', 0) == 1) {
             $title = JText::sprintf('JPAGETITLE', $app->get('sitename'), $title);
-        }
-        elseif ($app->get('sitename_pagetitles', 0) == 2)
-        {
+        } elseif ($app->get('sitename_pagetitles', 0) == 2) {
             $title = JText::sprintf('JPAGETITLE', $title, $app->get('sitename'));
         }
 
         $this->document->setTitle($title);
 
-        if ($params->get('menu-meta_description'))
-        {
+        if ($params->get('menu-meta_description')) {
             $this->document->setDescription($params->get('menu-meta_description'));
         }
 
-        if ($params->get('menu-meta_keywords'))
-        {
+        if ($params->get('menu-meta_keywords')) {
             $this->document->setMetadata('keywords', $params->get('menu-meta_keywords'));
         }
 
-        if ($params->get('robots'))
-        {
+        if ($params->get('robots')) {
             $this->document->setMetadata('robots', $params->get('robots'));
         }
 
         // Check for layout override
         $active = JFactory::getApplication()->getMenu()->getActive();
 
-        if (isset($active->query['layout']))
-        {
+        if (isset($active->query['layout'])) {
             $this->setLayout($active->query['layout']);
         }
 
@@ -86,8 +79,7 @@ class BespokeViewBespoke extends JViewLegacy
         $this->action        = $uri;
 
         // Check for errors.
-        if (count($errors = $this->get('Errors')))
-        {
+        if (count($errors = $this->get('Errors'))) {
             JLog::add(implode('<br />', $errors), JLog::WARNING, 'jerror');
 
             return false;

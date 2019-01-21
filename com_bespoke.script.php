@@ -95,17 +95,12 @@ class com_bespokeInstallerScript
         $db = JFactory::getDbo();
         $table = JTable::getInstance('menu');
 
-        if ($error = $db->getErrorMsg())
-        {
+        if ($error = $db->getErrorMsg()) {
             return false;
-        }
-        elseif (!empty($ids))
-        {
+        } elseif (!empty($ids)) {
             // Iterate the items to delete each one.
-            foreach ($ids as $menu_id)
-            {
-                if (!$table->delete((int) $menu_id))
-                {
+            foreach ($ids as $menu_id) {
+                if (!$table->delete((int) $menu_id)) {
                     return false;
                 }
             }
