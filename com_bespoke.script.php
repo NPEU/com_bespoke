@@ -76,11 +76,6 @@ class com_bespokeInstallerScript
      */
     public function postflight($type, $parent)
     {
-        if ($type != 'install') {
-            return;
-        }
-
-
         $manifest = $parent->getParent()->getManifest();
         $name = (string) $manifest->name;
 
