@@ -5,16 +5,81 @@
     </layout>
     
     <!-- Add fields to the request variables for the layout. -->
-    <fields name="request">
+    <fields name="params">
+        <!-- Currently unsued but keep for reference:
         <fieldset name="request"
             addfieldpath="/administrator/components/com_bespoke/models/fields"
          >
 
-            <field name="help_note" type="notice"
+            <field 
+                name="help_note"
+                type="notice"
                 message="COM_BESPOKE_HELP_NOTE"
                 label="COM_BESPOKE_HELP_TITLE"
                 readonly="true"
             />
+        </fieldset>
+        -->
+        <fieldset
+            name="basic"
+            label="COM_BESPOKE_FIELDSET_BLOCKS_LABEL"
+            description="COM_BESPOKE_BLOCKS_DESC"
+        >
+            <field
+                name="blocks"
+                type="subform"
+                label="COM_BESPOKE_BLOCKS_LABEL"
+                description="COM_BESPOKE_BLOCKS_DESC"
+                multiple="true"
+                min="1"
+                max="100"
+            >
+                <form>
+                    <field
+                        name="leftpane"
+                        type="sql"
+                        label="COM_BESPOKE_LEFT_PANE_LABEL"
+                        description="COM_BESPOKE_LEFT_PANE_DESC"
+                        query="SELECT id, title FROM #__modules WHERE module in ('mod_custom','mod_dataview','mod_image','mod_loadarticle','mod_map','mod_signpost','mod_video')"
+                        key_field="id"
+                        value_field="title"
+                        header="Select module"
+                    />
+                    <field
+                        name="rightpane"
+                        type="sql"
+                        label="COM_BESPOKE_RIGHT_PANE_LABEL"
+                        description="COM_BESPOKE_RIGHT_PANE_DESC"
+                        query="SELECT id, title FROM #__modules WHERE module in ('mod_custom','mod_dataview','mod_image','mod_loadarticle','mod_map','mod_signpost','mod_video')"
+                        key_field="id"
+                        value_field="title"
+                        header="None"
+                    />
+                    <field
+                        name="panebalance"
+                        type="radio"
+                        label="COM_BESPOKE_PANE_BALANCE_LABEL"
+                        description="COM_BESPOKE_PANE_BALANCE_DESC"
+                        default="100"
+                        class="btn-group"
+                    >
+                        <option value="100">COM_BESPOKE_PANE_BALANCE_100_LABEL</option>
+                        <option value="33--66">COM_BESPOKE_PANE_BALANCE_33_66_LABEL</option>
+                        <option value="50--50">COM_BESPOKE_PANE_BALANCE_50_50_LABEL</option>
+                        <option value="66--33">COM_BESPOKE_PANE_BALANCE_66_33_LABEL</option>
+                    </field>
+                    <field
+                        name="breakpoint"
+                        type="number"
+                        label="COM_BESPOKE_PANE_BREAKPOINT_LABEL"
+                        description="COM_BESPOKE_PANE_BREAKPOINT_DESC"
+                        min="10"
+                        max="60"
+                        step="5"
+                        default="40"
+                    />
+                </form>
+            </field>
         </fieldset>
     </fields>
 </metadata>

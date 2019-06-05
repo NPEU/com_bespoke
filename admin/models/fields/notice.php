@@ -1,4 +1,6 @@
 <?php
+// NOTE: Currently unsued but keep for reference:
+
 /**
  * @package     Joomla.Platform
  * @subpackage  Form

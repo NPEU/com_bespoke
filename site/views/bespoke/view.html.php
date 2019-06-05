@@ -77,6 +77,9 @@ class BespokeViewBespoke extends JViewLegacy
         $this->params        = &$params;
         $this->error         = $error;
         $this->action        = $uri;
+        
+        $this->blocks        = $this->params->get('blocks');
+        
 
         // Check for errors.
         if (count($errors = $this->get('Errors'))) {
