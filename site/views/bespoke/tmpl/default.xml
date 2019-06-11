@@ -78,6 +78,12 @@
                         step="5"
                         default="40"
                     />
+                    <field
+                        name="block_classes"
+                        type="text"
+                        label="COM_BESPOKE_BLOCK_CLASSES_LABEL"
+                        description="COM_BESPOKE_BLOCK_CLASSES_DESC"
+                    />
                 </form>
             </field>
         </fieldset>
