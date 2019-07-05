@@ -9,9 +9,7 @@
 
 defined('_JEXEC') or die;
 
-// Import Joomla controller library
-jimport('joomla.application.component.controller');
-
+use Joomla\CMS\Component\ComponentHelper;
 /**
  * Bespoke Component Controller
  */
