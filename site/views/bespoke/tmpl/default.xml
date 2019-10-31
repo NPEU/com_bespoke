@@ -84,6 +84,18 @@
                         label="COM_BESPOKE_BLOCK_CLASSES_LABEL"
                         description="COM_BESPOKE_BLOCK_CLASSES_DESC"
                     />
+                    <field
+                        name="left_pane_classes"
+                        type="text"
+                        label="COM_BESPOKE_LEFT_PANE_CLASSES_LABEL"
+                        description="COM_BESPOKE_LEFT_PANE_CLASSES_DESC"
+                    />
+                    <field
+                        name="right_pane_classes"
+                        type="text"
+                        label="COM_BESPOKE_RIGHT_PANE_CLASSES_LABEL"
+                        description="COM_BESPOKE_RIGHT_PANE_CLASSES_DESC"
+                    />
                 </form>
             </field>
         </fieldset>
