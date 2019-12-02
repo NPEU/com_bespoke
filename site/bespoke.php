@@ -16,7 +16,15 @@ $uri       = JFactory::getURI();
 $route     = $menu_item->route;
 $path      = trim($uri->getPath(), '/');
 
-if (($route == 'home' && $path != '') || ($route != 'home' && $route != $path)) {
+$db = JFactory::getDbo();
+$query = $db->getQuery(true);
+$query->select($db->qn(array('alias')));
+$query->from($db->qn('#__menu'));
+$query->where($db->qn('home') . ' = 1 ');
+$db->setQuery($query);
+$home_alias = $db->loadResult();
+
+if (($route == $home_alias && $path != '') || ($route != $home_alias && $route != $path)) {
     JError::raiseError(404, JText::_("Page Not Found"));
     return;
 }
