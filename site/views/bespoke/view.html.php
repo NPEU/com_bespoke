@@ -80,9 +80,10 @@ class BespokeViewBespoke extends JViewLegacy
         
         $this->blocks        = $this->params->get('blocks');
         
-
         // Check for errors.
-        if (count($errors = $this->get('Errors'))) {
+        $errors = $this->get('Errors');
+
+        if ($errors && count($errors)) {
             JLog::add(implode('<br />', $errors), JLog::WARNING, 'jerror');
 
             return false;
