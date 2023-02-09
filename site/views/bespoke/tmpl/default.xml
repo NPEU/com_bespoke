@@ -3,7 +3,7 @@
     <layout title="COM_BESPOKE_BESPOKE_VIEW_DEFAULT_TITLE">
         <message>COM_BESPOKE_BESPOKE_VIEW_DEFAULT_DESC</message>
     </layout>
-    
+
     <!-- Add fields to the request variables for the layout. -->
     <fields name="params">
         <!-- Currently unsued but keep for reference:
@@ -11,7 +11,7 @@
             addfieldpath="/administrator/components/com_bespoke/models/fields"
          >
 
-            <field 
+            <field
                 name="help_note"
                 type="notice"
                 message="COM_BESPOKE_HELP_NOTE"
@@ -26,6 +26,36 @@
             description="COM_BESPOKE_BLOCKS_DESC"
         >
             <field
+                name="use_blocks"
+                type="radio"
+                default="0"
+                label="COM_BESPOKE_BLOCK_TOGGLE_LABEL"
+                description="COM_BESPOKE_BLOCK_TOGGLE_DESC"
+                class="btn-group btn-group-yesno"
+            >
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+            <field
+                showon="use_blocks:0"
+                name="article_alias"
+                type="text"
+                label="COM_BESPOKE_ARTICLE_ALIAS_LABEL"
+                description="COM_BESPOKE_ARTICLE_ALIAS_DESC"
+                default=""
+                required="true"
+            />
+            <field
+                showon="use_blocks:0"
+                name="category_path"
+                type="text"
+                label="COM_BESPOKE_CATEGORY_PATH_LABEL"
+                description="COM_BESPOKE_CATEGORY_PATH_DESC"
+                default=""
+                required="true"
+            />
+            <field
+                showon="use_blocks:1"
                 name="blocks"
                 type="subform"
                 label="COM_BESPOKE_BLOCKS_LABEL"

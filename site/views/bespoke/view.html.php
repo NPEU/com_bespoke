@@ -6,6 +6,7 @@
  * @copyright   Copyright (C) NPEU 2018.
  * @license     MIT License; see LICENSE.md
  */
+use Joomla\Registry\Registry; // for new Registry
 
 defined('_JEXEC') or die;
 
@@ -33,7 +34,7 @@ class BespokeViewBespoke extends JViewLegacy
         // Get some data from the model
         #$areas      = $this->get('areas');
         #$state      = $this->get('state');
-        
+
         $params     = $app->getParams();
 
         /*
@@ -77,9 +78,34 @@ class BespokeViewBespoke extends JViewLegacy
         $this->params        = &$params;
         $this->error         = $error;
         $this->action        = $uri;
-        
-        $this->blocks        = $this->params->get('blocks');
-        
+
+        $this->blocks = false;
+        $this->article = false;
+
+        $use_blocks          = (bool) $this->params->get('use_blocks', true);
+
+        if ($use_blocks) {
+            $this->blocks = $this->params->get('blocks');
+        } else {
+            if (!empty($this->params->get('article_alias')) && !empty($this->params->get('category_path'))) {
+                $db = JFactory::getDBO();
+                $query = '
+                    SELECT con.id
+                    FROM #__content as con
+                    JOIN #__categories as cat ON con.catid = cat.id
+                    WHERE con.alias = "' . $this->params->get('article_alias') . '"
+                    AND cat.path = "' . $this->params->get('category_path') . '";
+                    ';
+                $db->setQuery($query);
+                $article_id = $db->loadResult();
+
+                JModelLegacy::addIncludePath(JPATH_SITE . '/components/com_content/models', 'ContentModel');
+                $model = JModelLegacy::getInstance('Article', 'ContentModel', ['ignore_request'=>true]);
+                $params = new Registry;
+                $model->setState('params', $params); // params (even empty) is *required* for model
+                $this->article = $model->getItem((int) $article_id);
+            }
+        }
         // Check for errors.
         $errors = $this->get('Errors');
 
