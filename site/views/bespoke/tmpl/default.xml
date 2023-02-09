@@ -28,7 +28,7 @@
             <field
                 name="use_blocks"
                 type="radio"
-                default="0"
+                default="1"
                 label="COM_BESPOKE_BLOCK_TOGGLE_LABEL"
                 description="COM_BESPOKE_BLOCK_TOGGLE_DESC"
                 class="btn-group btn-group-yesno"
