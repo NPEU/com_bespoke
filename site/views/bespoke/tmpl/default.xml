@@ -43,7 +43,6 @@
                 label="COM_BESPOKE_ARTICLE_ALIAS_LABEL"
                 description="COM_BESPOKE_ARTICLE_ALIAS_DESC"
                 default=""
-                required="true"
             />
             <field
                 showon="use_blocks:0"
@@ -52,7 +51,6 @@
                 label="COM_BESPOKE_CATEGORY_PATH_LABEL"
                 description="COM_BESPOKE_CATEGORY_PATH_DESC"
                 default=""
-                required="true"
             />
             <field
                 showon="use_blocks:1"
