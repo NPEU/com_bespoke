@@ -1,10 +1,10 @@
 <?php
 /**
- * @package     Joomla.Site
- * @subpackage  com_bespoke
+ * @package    Joomla.Site
+ * @subpackage com_bespoke
  *
- * @copyright   Copyright (C) NPEU 2018.
- * @license     MIT License; see LICENSE.md
+ * @copyright Copyright (C) NPEU 2018.
+ * @license   MIT License; see LICENSE.md
  */
 use Joomla\Registry\Registry; // for new Registry
 
@@ -21,9 +21,9 @@ class BespokeViewBespoke extends JViewLegacy
     /**
      * Execute and display a template script.
      *
-     * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
+     * @param string $tpl The name of the template file to parse; automatically searches through the template paths.
      *
-     * @return  mixed  A string if successful, otherwise an Error object.
+     * @return mixed  A string if successful, otherwise an Error object.
      */
     public function display($tpl = null)
     {
@@ -32,8 +32,8 @@ class BespokeViewBespoke extends JViewLegacy
         $error   = null;
 
         // Get some data from the model
-        #$areas      = $this->get('areas');
-        #$state      = $this->get('state');
+        // $areas      = $this->get('areas');
+        // $state      = $this->get('state');
 
         $params     = $app->getParams();
 

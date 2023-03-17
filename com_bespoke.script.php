@@ -1,10 +1,10 @@
 <?php
 /**
- * @package     Joomla.Site
- * @subpackage  com_bespoke
+ * @package    Joomla.Site
+ * @subpackage com_bespoke
  *
- * @copyright   Copyright (C) NPEU 2018.
- * @license     MIT License; see LICENSE.md
+ * @copyright Copyright (C) NPEU 2018.
+ * @license   MIT License; see LICENSE.md
  */
 
 defined('_JEXEC') or die;
@@ -17,7 +17,7 @@ class com_bespokeInstallerScript
     /**
      * This method is called after a component is installed.
      *
-     * @param  \stdClass $parent - Parent object calling this method.
+     * @param \stdClass $parent - Parent object calling this method.
      *
      * @return void
      */
@@ -28,7 +28,7 @@ class com_bespokeInstallerScript
     /**
      * This method is called after a component is uninstalled.
      *
-     * @param  \stdClass $parent - Parent object calling this method.
+     * @param \stdClass $parent - Parent object calling this method.
      *
      * @return void
      */
@@ -39,7 +39,7 @@ class com_bespokeInstallerScript
     /**
      * This method is called after a component is updated.
      *
-     * @param  \stdClass $parent - Parent object calling object.
+     * @param \stdClass $parent - Parent object calling object.
      *
      * @return void
      */
@@ -51,11 +51,11 @@ class com_bespokeInstallerScript
      * Runs just before any installation action is preformed on the component.
      * Verifications and pre-requisites should run in this function.
      *
-     * @param  string    $type   - Type of PreFlight action. Possible values are:
-     *                           - * install
-     *                           - * update
-     *                           - * discover_install
-     * @param  \stdClass $parent - Parent object calling object.
+     * @param string    $type   - Type of PreFlight action. Possible values are:
+     *                          - * install
+     *                          - * update
+     *                          - * discover_install
+     * @param \stdClass $parent - Parent object calling object.
      *
      * @return void
      */
@@ -66,11 +66,11 @@ class com_bespokeInstallerScript
     /**
      * Runs right after any installation action is preformed on the component.
      *
-     * @param  string    $type   - Type of PostFlight action. Possible values are:
-     *                           - * install
-     *                           - * update
-     *                           - * discover_install
-     * @param  \stdClass $parent - Parent object calling object.
+     * @param string    $type   - Type of PostFlight action. Possible values are:
+     *                          - * install
+     *                          - * update
+     *                          - * discover_install
+     * @param \stdClass $parent - Parent object calling object.
      *
      * @return void
      */
