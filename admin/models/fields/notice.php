@@ -1,5 +1,7 @@
 <?php
-// NOTE: Currently unsued but keep for reference:
+/**
+ * NOTE: Currently unsued but keep for reference:
+ */
 
 /**
  * @package    Joomla.Platform
@@ -36,7 +38,7 @@ class JFormFieldNotice extends JFormField
      * @since 3.7
      */
     // protected $layout = 'joomla.system.message';
-    
+
         /**
          * Method to get certain otherwise inaccessible properties from the form field object.
          *
@@ -79,7 +81,7 @@ class JFormFieldNotice extends JFormField
             parent::__set($name, $value);
         }
     }
-    
+
     /**
      * Method to attach a JForm object to the field.
      *
@@ -103,7 +105,7 @@ class JFormFieldNotice extends JFormField
 
         return $return;
     }
-    
+
     /**
      * Method to get the field input markup.
      *
@@ -112,7 +114,7 @@ class JFormFieldNotice extends JFormField
     protected function getInput()
     {
         $return = '<div class="alert alert-info"><div class="alert-message">' . JText::_($this->message) . '</div></div>';
-        
+
         return $return;
     }
 }
