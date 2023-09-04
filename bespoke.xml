@@ -9,16 +9,14 @@
     <copyright>(C) NPEU 2023</copyright>
     <license>MIT License; see LICENSE.md</license>
 
-    <version>1.5.1</version>
+    <version>1.5.3</version>
     <description>COM_BESPOKE_DESCRIPTION</description>
 
     <updateservers>
-        <server type="extension" name="NPEU: com_bespoke Update Site">https://raw.githubusercontent.com/NPEU/com_bespoke/main/update-manifest.xml</server>
+        <server type="extension" name="NPEU: com_bespoke Update Site">https://raw.githubusercontent.com/NPEU/com_bespoke/master/update-manifest.xml</server>
     </updateservers>
 
     <namespace path="src/">NPEU\Component\Bespoke</namespace>
-
-    <scriptfile>com_bespoke.script.php</scriptfile>
 
     <files folder="site">
         <folder>language</folder>
@@ -27,8 +25,6 @@
     </files>
 
     <administration>
-        <menu>COM_BESPOKE_MENU</menu>
-
         <files folder="admin">
             <folder>language</folder>
             <folder>services</folder>
