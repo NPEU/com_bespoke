@@ -3,12 +3,20 @@
  * @package     Joomla.Site
  * @subpackage  com_bespoke
  *
- * @copyright   Copyright (C) NPEU 2018.
+ * @copyright   Copyright (C) NPEU 2023.
  * @license     MIT License; see LICENSE.md
  */
 
-defined('_JEXEC') or die;
+#use Joomla\CMS\Language\Text;
+#use Joomla\CMS\Factory;
+#use Joomla\CMS\Router\Route;
+#use Joomla\CMS\Layout\LayoutHelper;
+#use Joomla\CMS\Layout\FileLayout;
+#use Joomla\CMS\Language\Multilanguage;
+#use Joomla\CMS\Session\Session;
+#use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
 
+defined('_JEXEC') or die;
 ?>
 <div class="search<?php echo $this->pageclass_sfx; ?>">
     <?php if ($this->params->get('show_page_heading')) : ?>
@@ -20,15 +28,14 @@ defined('_JEXEC') or die;
             <?php endif; ?>
         </h1>
     <?php endif; ?>
-    
-    <jdoc:include type="module" name="bespoke" />
-    
+
+    <?php /* <jdoc:include type="module" name="bespoke" /> */ ?>
+
     <?php echo JHtml::_('content.prepare', '{loadposition bespoke}'); ?>
-    
+
     <?php
-    $document = JFactory::getDocument();
-    $renderer   = $document->loadRenderer('modules');
-    $position   = 'bespoke';
-    $options   = array('style' => 'raw');
+    #$renderer   = $this->document->loadRenderer('modules');
+    #$position   = 'bespoke';
+    #$options   = array('style' => 'raw');
     ?>
 </div>
