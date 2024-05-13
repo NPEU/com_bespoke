@@ -11,15 +11,15 @@ namespace NPEU\Component\Bespoke\Site\View\Bespoke;
 
 defined('_JEXEC') or die;
 
-use Joomla\CMS\Factory;
-use Joomla\CMS\MVC\View\HtmlView as BaseHtmlView;
-use Joomla\CMS\Log\Log;
-use Joomla\CMS\Uri\Uri;
 #use Joomla\CMS\Helper\TagsHelper;
 #use Joomla\CMS\Language\Text;
-#use Joomla\CMS\Router\Route;
 #use Joomla\CMS\Plugin\PluginHelper;
+#use Joomla\CMS\Router\Route;
 #use Joomla\Event\Event;
+use Joomla\CMS\Factory;
+use Joomla\CMS\Log\Log;
+use Joomla\CMS\MVC\View\HtmlView as BaseHtmlView;
+use Joomla\CMS\Uri\Uri;
 
 class HtmlView extends BaseHtmlView {
 
@@ -106,7 +106,7 @@ class HtmlView extends BaseHtmlView {
         // Check for errors.
         $errors = $this->get('Errors', false);
 
-        if (!empty($errors)){
+        if (!empty($errors)) {
             Log::add(implode('<br />', $errors), Log::WARNING, 'jerror');
 
             return false;
