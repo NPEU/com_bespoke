@@ -20,6 +20,8 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Log\Log;
 use Joomla\CMS\MVC\View\HtmlView as BaseHtmlView;
 use Joomla\CMS\Uri\Uri;
+use Joomla\Database\DatabaseInterface;
+use Joomla\Registry\Registry;
 
 class HtmlView extends BaseHtmlView {
 
@@ -95,11 +97,21 @@ class HtmlView extends BaseHtmlView {
                 $db->setQuery($query);
                 $article_id = $db->loadResult();
 
-                JModelLegacy::addIncludePath(JPATH_SITE . '/components/com_content/models', 'ContentModel');
-                $model = JModelLegacy::getInstance('Article', 'ContentModel', ['ignore_request'=>true]);
-                $params = new Registry;
-                $model->setState('params', $params); // params (even empty) is *required* for model
-                $this->article = $model->getItem((int) $article_id);
+                $app = Factory::getApplication();
+                $article_model = $app->bootComponent('com_content')->getMVCFactory()->createModel('Article', 'Administrator', ['ignore_request' => true]);
+
+                #JModelLegacy::addIncludePath(JPATH_SITE . '/components/com_content/models', 'ContentModel');
+                #$article_model = JModelLegacy::getInstance('Article', 'ContentModel', ['ignore_request'=>true]);
+                #$params = new Registry;
+                #$article_model->setState('params', $params); // params (even empty) is *required* for model
+                $this->article = $article_model->getItem((int) $article_id);
+
+                // When a 'normal' article is loaded it has a params object filled with all sorts.
+                // Loading it via this model doesn't and I'm not why. Perhaps it's the wrong model
+                // for the job? Without the params object many other places in the tempalte fail
+                // because it's assumed to be there. So just putting this in for now pending a more
+                // thorough probe into what's going on:
+                $this->article->params = new Registry;
             }
         };
 
