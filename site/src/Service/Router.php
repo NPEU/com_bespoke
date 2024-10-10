@@ -53,8 +53,8 @@ class Router extends RouterView
         //$this->db              = $db;
         $this->db = \Joomla\CMS\Factory::getContainer()->get('DatabaseDriver');
 
-        $Bespoke = new RouterViewConfiguration('Bespoke');
-        $this->registerView($Bespoke);
+        $bespoke = new RouterViewConfiguration('bespoke');
+        $this->registerView($bespoke);
 
 
         parent::__construct($app, $menu);
