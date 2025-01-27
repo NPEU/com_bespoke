@@ -4,7 +4,10 @@
         <message>COM_BESPOKE_BESPOKE_VIEW_DEFAULT_DESC</message>
     </layout>
 
-    <fields name="params">
+    <fields name="params"
+        addruleprefix="NPEU\Component\Bespoke\Administrator\Rule"
+        addfieldprefix="NPEU\Component\Bespoke\Administrator\Field"
+        >
         <fieldset
             name="basic"
             label="COM_BESPOKE_FIELDSET_BLOCKS_LABEL"
@@ -50,24 +53,21 @@
                 <form>
                     <field
                         name="leftpane"
-                        type="sql"
+                        type="assignedmodules"
                         label="COM_BESPOKE_LEFT_PANE_LABEL"
                         description="COM_BESPOKE_LEFT_PANE_DESC"
-                        query="SELECT id, title FROM #__modules WHERE position = 'bespoke' ORDER BY title"
-                        key_field="id"
-                        value_field="title"
-                        header="Select module"
-                    />
+                        required="true"
+                    >
+                        <option value="">COM_BESPOKE_LEFT_DEFAULT</option>
+                    </field>
                     <field
                         name="rightpane"
-                        type="sql"
+                        type="assignedmodules"
                         label="COM_BESPOKE_RIGHT_PANE_LABEL"
                         description="COM_BESPOKE_RIGHT_PANE_DESC"
-                        query="SELECT id, title FROM #__modules WHERE position = 'bespoke' ORDER BY title"
-                        key_field="id"
-                        value_field="title"
-                        header="None"
-                    />
+                    >
+                        <option value="">COM_BESPOKE_RIGHT_DEFAULT</option>
+                    </field>
                     <field
                         name="panebalance"
                         type="radio"
