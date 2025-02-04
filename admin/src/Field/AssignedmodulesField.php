@@ -6,6 +6,7 @@ use Joomla\CMS\Form\Field\ListField;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\MVC\View\GenericDataException;
+use Joomla\CMS\Router\Route;
 use Joomla\CMS\Uri\Uri;
 use Joomla\Database\DatabaseInterface;
 
@@ -74,5 +75,24 @@ class AssignedmodulesField extends ListField
             $options[0]->text = 'Select module';
         }
         return $options;
+    }
+
+    /**
+     * Method to get the field label markup for a spacer.
+     * Use the label text or name from the XML element as the spacer or
+     * Use a hr="true" to automatically generate plain hr markup
+     *
+     * @return  string  The field label markup.
+     */
+    protected function getLabel()
+    {
+        $append = false;
+        $module_id = $this->value;
+
+        if (!empty($module_id)) {
+            $append = "\n" . '<br><a href="' . Route::_('/administrator/index.php?option=com_modules&task=module.edit&id=' . $module_id) .'" target="_blank">Edit current module</a>';
+        }
+
+        return parent::getLabel() . $append;
     }
 }
