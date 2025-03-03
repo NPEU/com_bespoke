@@ -42,13 +42,13 @@ class AssignedmodulesField extends ListField
         $id = $uri->getVar('id');
 
         $q = $db->getQuery(true);
-        $q->select($db->qn(['m.id', 'm.title']));
-        $q->join('LEFT', $db->qn('#__modules_menu', 'mm') . ' ON ' . $db->qn('m.id') . ' = ' . $db->qn('mm.moduleid'));
-        $q->from($db->qn('#__modules', 'm'));
+        $q->select($db->quoteName(['m.id', 'm.title']));
+        $q->join('LEFT', $db->quoteName('#__modules_menu', 'mm') . ' ON ' . $db->quoteName('m.id') . ' = ' . $db->quoteName('mm.moduleid'));
+        $q->from($db->quoteName('#__modules', 'm'));
         $q->where([
-            $db->qn('m.position') . ' = ' . $db->q('bespoke'),
-            $db->qn('m.published') . ' = 1',
-            $db->qn('mm.menuid') . ' = ' . $db->q($id)
+            $db->quoteName('m.position') . ' = ' . $db->quote('bespoke'),
+            $db->quoteName('m.published') . ' = 1',
+            $db->quoteName('mm.menuid') . ' = ' . $db->quote($id)
         ]);
         $q->order('m.title');
 
