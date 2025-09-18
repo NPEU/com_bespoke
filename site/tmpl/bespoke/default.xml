@@ -56,7 +56,6 @@
                         type="assignedmodules"
                         label="COM_BESPOKE_LEFT_PANE_LABEL"
                         description="COM_BESPOKE_LEFT_PANE_DESC"
-                        required="true"
                     >
                         <option value="">COM_BESPOKE_LEFT_DEFAULT</option>
                     </field>
