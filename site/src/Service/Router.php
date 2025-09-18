@@ -13,8 +13,8 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Application\SiteApplication;
 use Joomla\CMS\Categories\CategoryFactoryInterface;
-use Joomla\CMS\Categories\CategoryInterface;
-use Joomla\CMS\Component\ComponentHelper;
+#use Joomla\CMS\Categories\CategoryInterface;
+#use Joomla\CMS\Component\ComponentHelper;
 use Joomla\CMS\Component\Router\RouterView;
 use Joomla\CMS\Component\Router\RouterViewConfiguration;
 use Joomla\CMS\Component\Router\Rules\MenuRules;
@@ -23,9 +23,9 @@ use Joomla\CMS\Component\Router\Rules\StandardRules;
 use Joomla\CMS\Menu\AbstractMenu;
 use Joomla\CMS\MVC\Factory\MVCFactoryAwareTrait;
 use Joomla\Database\DatabaseInterface;
-use Joomla\Database\ParameterType;
+#use Joomla\Database\ParameterType;
 
-use NPEU\Component\Bespoke\Site\Service\CustomRouterRules;
+#use NPEU\Component\Bespoke\Site\Service\CustomRouterRules;
 
 
 

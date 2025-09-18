@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_Bespoke
+ * @subpackage  com_bespoke
  *
  * @copyright   Copyright (C) NPEU 2023.
  * @license     MIT License; see LICENSE.md

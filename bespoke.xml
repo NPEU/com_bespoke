@@ -12,11 +12,11 @@
     <version>4.4.1</version>
     <description>COM_BESPOKE_DESCRIPTION</description>
 
+    <namespace path="src/">NPEU\Component\Bespoke</namespace>
+
     <updateservers>
         <server type="extension" name="NPEU: com_bespoke Update Site">https://raw.githubusercontent.com/NPEU/com_bespoke/main/update-manifest.xml</server>
     </updateservers>
-
-    <namespace path="src/">NPEU\Component\Bespoke</namespace>
 
     <files folder="site">
         <folder>language</folder>

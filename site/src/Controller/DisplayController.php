@@ -17,11 +17,10 @@ use Joomla\CMS\MVC\Controller\BaseController;
 
 /**
  * Bespoke Component Controller
- * @since  0.0.2
  */
 class DisplayController extends BaseController {
 
-    public function display($cachable = false, $urlparams = array()) {
+    public function display($cachable = false, $urlparams = []) {
         $document = Factory::getDocument();
         $viewName = $this->input->getCmd('view', 'login');
         $viewFormat = $document->getType();

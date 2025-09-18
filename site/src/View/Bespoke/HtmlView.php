@@ -23,6 +23,9 @@ use Joomla\CMS\Uri\Uri;
 use Joomla\Database\DatabaseInterface;
 use Joomla\Registry\Registry;
 
+/**
+ * Bespoke Component HTML View
+ */
 class HtmlView extends BaseHtmlView {
 
     public function display($template = null)
